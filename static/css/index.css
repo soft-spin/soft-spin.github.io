@@ -133,5 +133,35 @@ body {
   font-size: smaller;
 }
 
+.video-container {
+  display: flex;          /* Flexbox layout */
+  align-items: center;    /* Align items vertically */
+  justify-content: center; /* Center both videos horizontally */
+  gap: 50px;              /* Space between videos */
+}
 
+.left-video {
+  flex: 1;                /* Adjust the width of the left video (narrower) */
+  max-width: 600px;       /* You can change this to control how narrow it should be */
+}
 
+.center-video {
+  flex: 2;                /* The center video will take more space */
+  max-width: 900px;       /* Adjust to your desired width */
+}
+
+.separator {
+  width: 2px;             /* Width of the separator (optional) */
+  background-color: gray; /* Color of the separator */
+  height: 100%;           /* Height of the separator */
+}
+
+video {
+  width: 100%;            /* Make videos responsive to their containers */
+  height: auto;
+}
+
+.video-row {
+  margin-bottom: 20px;   /* Space between the two video rows */
+}
+ 

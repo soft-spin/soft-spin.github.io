@@ -52,21 +52,27 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Soft Robotic Dynamic In-Hand Pen Spinning</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Yunchao Yao</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Uksang Yoo</a>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Jean Oh</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Christopher Atkeson</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Jeffery Ichnowski</a>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Carnegie Mellon University<br> 
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
@@ -81,15 +87,6 @@
                         <span>Paper</span>
                       </a>
                     </span>
-
-                    <!-- Supplementary PDF link -->
-                    <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
                     </a>
                   </span>
 
@@ -129,11 +126,11 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/thumbnail.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        
       </h2>
     </div>
   </div>
@@ -148,7 +145,27 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Dynamic in-hand manipulation remains a challenging task for soft robotic systems that have demonstrated
+            advantages in safe compliant interactions but struggle with
+            high-speed dynamic tasks. In this work, we present SWIFT,
+            a system for learning dynamic tasks using a soft and compliant
+            robotic hand. Unlike previous works that rely on quasi-static
+            actions and precise object models, the proposed system learns
+            to spin a pen through trial-and-error using only real-world
+            data without requiring explicit prior knowledge of the pen's
+            physical attributes. With self-labeled trials sampled from the
+            real world, the system discovers the set of pen grasping and
+            spinning primitive parameters that enables a soft hand to
+            spin a pen robustly and reliably. After 130 sampled actions,
+            SWIFT achieves 100 % success rate across three pens with
+            different weights and weight distributions, demonstrating the
+            system's generalizability and robustness to changes in object
+            properties. The results highlight the potential for soft robotic
+            end-effectors to perform dynamic tasks including rapid in-hand
+            manipulation. We also demonstrate that SWIFT generalizes
+            to spinning tools with different shapes and weights such as a
+            brush and a screwdriver which we spin with 10/10 and 5/10
+            success rates respectively
           </p>
         </div>
       </div>
@@ -159,92 +176,100 @@
 
 
 <!-- Image carousel -->
+ 
+<!-- End image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
+    <h2 class="title is-3">Method Overview</h2>
+    <h2 class="subtitle is-5">There are 4 main stages for each
+      iteration k: 1) During grasping and resetting, the robot arm moves the MOE
+      hand to a target grasp location following a specific grasping location gk . 2)
+      The robot arm then moves the MOE hand to the pre-spin configuration,
+      where the MOE fingers execute the parameterized action. 3) An RGB-
+      D camera records the trial, and we apply masks from SAM-v2 to create
+      segmented point cloud. We then apply other post-processing on the point
+      cloud to get rotation and displacement state of the pen. 4) Lastly, the pipeline
+      evaluates the objective function with observed states of the pen and updates
+      the action parameters with CMA-ES</h2>
+    <div class="hero-body" style="text-align: center;">
+      <!-- Replace red circle SVG with an external .svg file using <img> -->
+      <img src="static/images/Pipeline_figure.svg" alt="Description of the SVG" width="70%" >
     </div>
   </div>
-</div>
-</div>
+  </div>
 </section>
-<!-- End image carousel -->
 
 
 
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
+<section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <h2 class="title is-3">Resetting and CMA-ES updates</h2>
+      <h2 class="subtitle is-5">(Left) The system is reset by a robot arm picking the pen from the work surface. The fixture on the table offers more consistency for the MOE-hand to grasp onto the pen.(Right) Shows the CMA-ES updates where more successes are found over generations. The action that produced the highest reward over all the generations are chosen as the final action</h2>
+      <div class="hero-body">
+        <div class="video-container">
+          <!-- Narrower video on the left -->
+          <div class="left-video">
+            <video poster="" id="narrow-video" autoplay controls muted loop width="100%">
+              <source src="static/videos/reset_4x_speed_nocaption_cropped.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- Line separator (optional) -->
+          <div class="separator"></div>
+
+          <!-- Main video in the center -->
+          <div class="center-video">
+            <video poster="" id="tree" autoplay controls muted loop width="100%">
+              <source src="static/videos/combined_video_new.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
-
 
 <!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
+      <h2 class="title is-3">All Evaluations</h2>
+      <h2 class="subtitle is-5">We evaluate the performance of our system on pens with different center of gravities. We also evaluate the system using commonly seen objects, such as a paint brush and a screwdriver. </h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
+            <source src="static/videos/pen1_half_speed.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
             <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
+            <source src="static/videos/pen2_half_speed.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
             <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
+            <source src="static/videos/pen3_half_speed.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/brush_half_speed.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\
+            <!-- Your video file here -->
+            <source src="static/videos/screwdriver_half_speed.mp4"
             type="video/mp4">
           </video>
         </div>
@@ -254,23 +279,37 @@
 </section>
 <!-- End video carousel -->
 
+<section class="hero is-small"> 
+  <div class="container">
+   <div class="hero-body">
+     <h2 class="title is-3">Action parameters</h2>
+     <h2 class="subtitle is-5">The action parameters are composed of three parts: 1. A grasping position instructing the robot where to pick the pen, 2. A set of 6 target angles for the servos on the robot fingers to reach, and 3. An amount of delay in seconds for the robot to wait between spinning and catching motions. The catching motion is simplified to be the reverse motion of the spin motion.</h2>
+     <video poster="" id="primitive_action" autoplay controls muted loop height="100%">
+       <!-- Your video here -->
+       <source src="static/videos/arxiv_suppliemntary_action_primitive_simple.mp4"
+       type="video/mp4">
+     </video>
+   </div>
+ </div>
+</section>
 
 
-
-
+<section class="hero is-small"> 
+ <div class="container">
+  <div class="hero-body">
+    <h2 class="title is-3">State estimation pipeline</h2>
+    <h2 class="subtitle is-5"> The state estimation starts with finding the salient markers in the view. The center of the markers are then sent to Segment Anything v2 to track the motion of the pen. Using the RGB-D camera, the point clouds of the trial are filtered by the mask and a bounding box around the MOE-finger tips. Finally, PCA is applied to find the amount of rotation that the pen has taken during each trial. The reward function encourages more rotation while penalizes every frame where the pen is too far from the fingers. </h2>
+    <video poster="" id="state_estimation" autoplay controls muted loop height="100%">
+      <!-- Your video here -->
+      <source src="static/videos/arxiv_suppliemntary_test_state_estimation.mp4"
+      type="video/mp4">
+    </video>
+  </div>
+</div>
+</section>
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
+ 
 <!--End paper poster -->
 
 
