@@ -165,3 +165,25 @@ video {
   margin-bottom: 20px;   /* Space between the two video rows */
 }
  
+
+.video-svg-container {
+  display: flex;                  /* Flexbox for side-by-side layout */
+  justify-content: space-between; /* Ensures space between the SVG and video */
+  align-items: center;            /* Vertically aligns the SVG and video */
+  gap: 20px;                      /* Adds space between the SVG and video */
+}
+
+.svg-container {
+  flex: 1;                        /* SVG takes up 1 part of the available space */
+  max-width: 45%;                 /* Ensure the SVG does not exceed 45% of the width */
+}
+
+.video-container {
+  flex: 1;                        /* Video takes up 1 part of the available space */
+  max-width: 45%;                 /* Ensure the video does not exceed 45% of the width */
+}
+
+img {
+  width: 100%;                    /* Ensures the SVG image is responsive */
+  height: auto;                   /* Keeps aspect ratio */
+}
