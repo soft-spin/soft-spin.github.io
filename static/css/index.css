@@ -178,7 +178,7 @@ video {
   max-width: 45%;                 /* Ensure the SVG does not exceed 45% of the width */
 }
 
-.video-container {
+.video-container-with-svg {
   flex: 1;                        /* Video takes up 1 part of the available space */
   max-width: 45%;                 /* Ensure the video does not exceed 45% of the width */
 }
